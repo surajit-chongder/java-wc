@@ -1,27 +1,8 @@
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 class WordCount{
   private final String content;
 
-  public WordCount(String filename){
-    this.content = this.readFile(filename);
-  }
-
-  private String readFile(String filename){
-    String content = null;
-    File file = new File(filename);
-    try {
-      FileReader reader = new FileReader(file);
-      char[] chars = new char[(int) file.length()];
-      reader.read(chars);
-      content = new String(chars);
-      reader.close();
-    }
-    catch (IOException err) {
-      err.printStackTrace();
-    }
-    return content;
+  public WordCount(String contentElement){
+    this.content = contentElement;
   }
 
   public int characterCount(){
@@ -38,7 +19,7 @@ class WordCount{
 
   public static void main(String[] args) {
     String file = new String(args[0]);
-    WordCount my = new WordCount(file);
+    WordCount my = new WordCount(new ReadFile(file).read());
     System.out.println(my.characterCount());
     System.out.println(my.lineCount());
     System.out.println(my.wordCount());
