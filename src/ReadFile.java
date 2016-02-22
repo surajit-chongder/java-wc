@@ -24,4 +24,7 @@ class ReadFile {
     }
     return content;
   }
+  public String filename(){
+    return new String(this.file);
+  }
 }
