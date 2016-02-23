@@ -40,7 +40,7 @@ class WcOperation {
       totalLine += each.lineCount();
       totalWord += each.wordCount();
       totalCharacter += each.characterCount();
-      representationString(each.lineCount()+"    "+each.wordCount()+"   "+each.characterCount()+"    "+filename);
+      representationString(each.lineCount()+"\t\t"+each.wordCount()+"\t\t"+each.characterCount()+"\t\t"+filename);
     }
     actionIfMoreThanFile(files.length,totalLine,totalWord,totalCharacter);
   }
@@ -61,7 +61,7 @@ class WcOperation {
 
   private void actionIfMoreThanFile(int fileLength,int totalLine,int totalWord,int totalCharacter){
     if (fileLength > 1)
-      representationString(totalLine +"    "+ totalWord +"   "+ totalCharacter +"    "+"total");
+      representationString(totalLine +"\t\t"+ totalWord +"\t\t"+ totalCharacter +"\t\t"+"total");
   }
 
   private void representationString(String represent){
