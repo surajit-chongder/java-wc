@@ -20,7 +20,9 @@ class ReadFile {
       reader.close();
     }
     catch (IOException err) {
-      err.printStackTrace();
+      System.out.println("------------------");
+      // System.out.println("wc: "+this.file+": open: No such file or directory");
+      // err.printStackTrace();
     }
     return content;
   }
