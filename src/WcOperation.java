@@ -26,6 +26,7 @@ class WcOperation {
     }
     return filteredCommands;
   }
+
   private boolean hasCommand(){
     return (this.filterCommand()[0] == null) ? false : true;
   }
@@ -40,9 +41,9 @@ class WcOperation {
       totalLine += each.lineCount();
       totalWord += each.wordCount();
       totalCharacter += each.characterCount();
-      representationString(each.lineCount()+"\t\t"+each.wordCount()+"\t\t"+each.characterCount()+"\t\t"+filename);
+      representationString("\t"+each.lineCount()+"\t\t"+each.wordCount()+"\t\t"+each.characterCount()+" "+filename);
     }
-    actionIfMoreThanFile(files.length,totalLine,totalWord,totalCharacter);
+    actionIfMoreThanOneFile(files.length,totalLine,totalWord,totalCharacter);
   }
 
   private void withCommandRepresentation(){
@@ -54,14 +55,14 @@ class WcOperation {
       Wc each = new Wc(fileContent);
       for (int commandIndex = 0; commands[commandIndex] != null ; commandIndex++) {
         int result = this.getFunctionalCommandValue(commands[commandIndex],each);
-        representationString(result +"   "+ filename);
+        representationString("\t"+result +"\t"+ filename);
       }
     }
   }
 
-  private void actionIfMoreThanFile(int fileLength,int totalLine,int totalWord,int totalCharacter){
+  private void actionIfMoreThanOneFile(int fileLength,int totalLine,int totalWord,int totalCharacter){
     if (fileLength > 1)
-      representationString(totalLine +"\t\t"+ totalWord +"\t\t"+ totalCharacter +"\t\t"+"total");
+      representationString("\t"+totalLine +"\t\t"+ totalWord +"\t\t"+ totalCharacter +" "+"total");
   }
 
   private void representationString(String represent){

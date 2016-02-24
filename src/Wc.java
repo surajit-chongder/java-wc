@@ -10,7 +10,8 @@ class Wc{
   }
 
   public int lineCount(){
-    return this.content.split("\n").length;
+    int noOfLine = this.content.split("\n").length;
+    return (noOfLine > 1) ? noOfLine : 0;
   }
 
   public int wordCount(){
