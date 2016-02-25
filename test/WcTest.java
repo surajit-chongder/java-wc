@@ -1,5 +1,6 @@
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+
 public class WcTest{
   String data = "Hey I am very happy\n\t\tHow are you ?\nI am fine and you ?\n";
 

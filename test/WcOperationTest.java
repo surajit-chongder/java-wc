@@ -1,5 +1,6 @@
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+
 public class WcOperationTest{
   String []arguments = {"-m","todo.txt","method.txt"};
   @Test
